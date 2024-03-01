@@ -164,3 +164,35 @@ you can create database tables with Django's migrate command:
     python3 manage.py createsuperuser
 ```
 
+## CONNECT HEROKU TO DB
+* Deploy the project after connecting the code to the db (step before)
+* Go to Heroku-Dashboard and **Settings**
+    * Add a new config var with a key of DATABASE_URL and the value of the ElephantSQL URL.
+
+
+## CREATING A MODEL
+* Go to your app/models.py and create the class for your DB model
+* then update your DB using:
+    ```python
+        python3 manage.py makemigrations app_name
+    ```
+    Note: A blog/migrations/0001_initial.py file is created containing the instructions on what table to build.
+* Create the DB tables:
+    ```python
+        python3 manage.py migrate app_name
+    ```
+* Open **app/admin.py** import the model and register:
+    ```python
+        from .models import ClassNameOfModel
+
+        # Register your models here.
+        admin.site.register(ClassNameOfModel)
+    ```
+
+* Open the codestar/settings.py file and add the following code.
+    ```python
+        CSRF_TRUSTED_ORIGINS = [
+            "https://*.codeanyapp.com",
+            "https://*.herokuapp.com"
+        ]
+    ```
