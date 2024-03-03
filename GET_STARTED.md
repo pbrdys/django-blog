@@ -177,6 +177,10 @@ you can create database tables with Django's migrate command:
         python3 manage.py makemigrations app_name
     ```
     Note: A blog/migrations/0001_initial.py file is created containing the instructions on what table to build.
+* DRY RUN:
+```python 
+    python3 manage.py makemigrations --dry-run
+```
 * Create the DB tables:
     ```python
         python3 manage.py migrate app_name
