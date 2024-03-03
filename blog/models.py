@@ -15,7 +15,6 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    field_1 = models.CharField()
     
     def __str__(self):
         return f"{self.title} | written by {self.author}"
