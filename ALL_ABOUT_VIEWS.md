@@ -31,3 +31,9 @@
         ]
     ```
 
+## KEY-FEATURES about VIEWS:
+- View takes a web request and returns a web response
+- Views need to have a URL
+- To return a web response we need a view function or class
+- View function can operate through the model CRUD operations to the DB
+- Views present data to the end user

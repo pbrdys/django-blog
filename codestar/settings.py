@@ -27,7 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#r+qi!*@^2)ba%z&16l^m)if7q92x+juf3x7lob^1n%vgly)#w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+# If DEBUG = False: django admin panel css not loading properly
+# if DEBUG = True: django admin panel showed correct!
+# Why?
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote', # notation for apps: pip installed app might be named django-summernote, bute the notation is rather with an _ than an -
     'blog',
 ]
 
