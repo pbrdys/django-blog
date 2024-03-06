@@ -82,3 +82,24 @@ For example, you could add this to base.html:
     <p>This is my default paragraph</p>
 {% endblock content %}
 
+
+
+## Variables and control structures
+
+**There are 2 types of notation:**
+* The double brace notation {{ }} indicates a variable. When the template engine encounters a variable, it evaluates that variable and replaces it with the result. For example, {{ post.author }} will be replaced by the value of the author attribute from the post object.
+
+* The brace and percentage sign notation, {% %}, is what we call a tag. Tags are more complex than variables. Some of them, like the block tag, allow for text or HTML to be inserted. Others, like the for loop, control flow by performing loops or logical operations.
+
+
+**{% if forloop.counter|divisibleby:3 %}**
+    my content here
+**{% endif %}**
+This if statement checks to see how many times our for loop has run. If the counter is divisible by three, then it inserts another closing div tag and a new div with the class of row. This is so that we have a maximum of three posts per row on the homepage. If you change that number to 2 and refresh your project, you will see that you have three rows of two posts instead of two rows of three. This is a handy trick to remember when formatting your own list pages. Make sure you put the number back to 3 and save your index.html file before moving on. 
+
+**href="{% url 'home' %}"**
+This is a Django Template Language tag. Inside the tag, we have url and a reference to 'home'. The url tag returns an absolute path reference which is a URL without the domain name. It does this, in our example, for the URL named 'home'. Where does it get this name from? Take a look at the blog/urls.py file, and you will see that our main view has the name of home. So, when Django encounters a url tag, it looks up the name of the URL and inserts it for us. We'll explore the benefits of this approach below.
+
+
+One last thing. The curious among you might be wondering why we couldn't just say 
+**{% if request.path == {% url 'home' %} %}**? Why did we have to assign it to a variable? All excellent questions, which I'm sure you were thinking. The reason is that url itself is a tag, so **we can't nest a tag inside another tag**, so we had to assign the output of url to a variable.

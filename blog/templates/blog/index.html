@@ -10,6 +10,11 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
+                <!-- 
+                    You may be wondering where the post_list name comes from. 
+                    Django determines this based on the model name and the view type. 
+                    In this case, the Post model and the generic ListView type.
+                -->
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -20,6 +25,7 @@
                             </div>
                             <a href="#" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
                             <hr />
