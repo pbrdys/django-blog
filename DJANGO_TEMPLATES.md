@@ -103,3 +103,5 @@ This is a Django Template Language tag. Inside the tag, we have url and a refere
 
 One last thing. The curious among you might be wondering why we couldn't just say 
 **{% if request.path == {% url 'home' %} %}**? Why did we have to assign it to a variable? All excellent questions, which I'm sure you were thinking. The reason is that url itself is a tag, so **we can't nest a tag inside another tag**, so we had to assign the output of url to a variable.
+
+## Pagination
