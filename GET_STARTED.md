@@ -29,7 +29,7 @@ The . at the end says that the project is being insalled in the current director
 
 ## CREATE DJANGO APP:
 ```python
-    python3 manage.py startapp app_name
+    django-admin startapp app_name
 ```
 
 ## APP/views.py - ADD:

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote', # notation for apps: pip installed app might be named django-summernote, bute the notation is rather with an _ than an -
     'blog',
+    'about',
 ]
 
 MIDDLEWARE = [
