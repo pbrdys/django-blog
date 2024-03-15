@@ -103,5 +103,8 @@ def comment_delete(request, slug, comment_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
+    # HttpResponseRedirect is a Django class that tells the browser to go to a different URL.
+    # reverse is a Django function that constructs a URL from the provided URL path name and any relevant URL arguments: args=[slug].
+    # Using the slug argument ensures the user is returned to the same blog post on which they edited or deleted a comment.
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
         
