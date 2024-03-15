@@ -44,11 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote', # notation for apps: pip installed app might be named django-summernote, bute the notation is rather with an _ than an -
+    'cloudinary',
     'blog',
     'about',
     'crispy_forms',
