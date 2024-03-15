@@ -23,7 +23,7 @@
                                 {% if "placeholder" in post.featured_image.url %}
                                     <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                         alt="placeholder image">
-                                    {% else %}
+                                {% else %}
                                     <img class="card-img-top" src=" {{ post.featured_image.url }}"
                                         alt="{{ post.title }}">
                                 {% endif %}
